@@ -26,7 +26,36 @@ public class Product {
 		this.price = dbObject.getDouble(Product.ProductConstants.FIELD_PRICE);
 		this.category = dbObject.getString(Product.ProductConstants.FIELD_CATEGORY);
 	}
-	
+
+	/**
+	 * Construtor Objeto com campos.
+	 * 
+	 * @param dbObject
+	 */
+	public Product(String id, String name, String description, Double price, String category) {
+		this.id = id;
+		this.name = name;
+		this.description = description;
+		this.price = price;
+		this.category = category;
+	}
+
+	/**
+	 * Construtor padrao.
+	 * 
+	 * @param dbObject
+	 */
+	public Product() {
+		super();
+	}
+
+	public Product(ProductBuilder builder) {
+		this.name = builder.name;
+		this.description = builder.description;
+		this.price = builder.price;
+		this.category = builder.category;
+	}
+
 	/*
 	 * Getters and setters
 	 */
@@ -84,7 +113,31 @@ public class Product {
 		String FIELD_PRICE = "price";
 		String FIELD_CATEGORY = "category";
 		String COLLECTION_NAME = "products";
-		
+
+	}
+	
+	/**
+	 * Builder de produto para testes.
+	 * @author luan
+	 *
+	 */
+	public static class ProductBuilder {
+
+		private String name;
+		private String description;
+		private Double price;
+		private String category;
+
+		public ProductBuilder(String name, String description, Double price, String category) {
+			this.name = name;
+			this.description = description;
+			this.price = price;
+			this.category = category;
+		}
+
+		public Product build() {
+			return new Product(this);
+		}
 
 	}
 

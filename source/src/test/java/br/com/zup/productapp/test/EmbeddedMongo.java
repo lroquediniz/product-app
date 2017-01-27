@@ -2,8 +2,6 @@ package br.com.zup.productapp.test;
 
 import java.io.IOException;
 import java.net.UnknownHostException;
-import java.security.NoSuchAlgorithmException;
-import java.security.SecureRandom;
 
 import org.slf4j.LoggerFactory;
 
