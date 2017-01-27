@@ -1,4 +1,4 @@
-package br.com.zup.productapp.test;
+package br.com.zup.productapp.embedded;
 
 import java.io.IOException;
 import java.net.UnknownHostException;

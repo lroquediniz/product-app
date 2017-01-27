@@ -40,7 +40,7 @@ public class ProductServiceTest {
 	 */
 	@BeforeClass
 	public static void beforeClass() throws Exception {
-		EmbeddedMongo.DB.start();
+		EmbeddedMongoTest.DB.start();
 	}
 
 	/**
@@ -48,7 +48,7 @@ public class ProductServiceTest {
 	 */
 	@AfterClass
 	public static void afterClass() {
-		EmbeddedMongo.DB.stop();
+		EmbeddedMongoTest.DB.stop();
 	}
 
 	/**
