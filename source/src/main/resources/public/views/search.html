@@ -1,0 +1,33 @@
+<h2>All Products<a class="btn btn-primary pull-right" href="#/create"><i
+        class="icon-plus-sign icon-white"></i>New</a></h2>
+
+<table class="table table-hover">
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            Description
+        </th>
+        <th>
+            Price
+        </th>
+        <th>
+            Category
+        </th>
+    </tr>
+    <tr class="success-{{todo.done}}" ng-repeat="product in products">
+    	<td>
+    		<a href="#/edit/{{product.id}}" ng-bind="product.name"></a>
+    	</td>
+    	<td>
+    		<a href="#/edit/{{product.id}}" ng-bind="product.description"></a>
+    	</td>
+    	<td>
+    		<a href="#/edit/{{product.id}}" ng-bind="product.price"></a>
+    	</td>
+    	<td>
+    		<a href="#/edit/{{product.id}}" ng-bind="product.category"></a>
+    	</td>	
+    </tr>
+</table>

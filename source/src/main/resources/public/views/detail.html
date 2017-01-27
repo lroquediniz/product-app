@@ -1,0 +1,39 @@
+<form id="ProductForm" name="ProductForm" class="form-horizontal" role="form">
+    
+    <div class="form-group" ng-class="{'has-error': ProductForm.name.$invalid}">
+        <label for="title" class="col-sm-2 control-label">Name</label>
+        <div class="col-sm-6">
+            <input id="name" name="name" type="text" class="form-control" placeholder="Name" ng-model="product.name" required>
+        </div>
+    </div>
+    
+    <div class="form-group" ng-class="{'has-error': ProductForm.description.$invalid}">
+        <label for="title" class="col-sm-2 control-label">Description</label>
+        <div class="col-sm-6">
+            <input id="description" name="description" type="text" class="form-control"  placeholder="description" ng-model="product.description" required>
+        </div>
+    </div>
+    
+    <div class="form-group" ng-class="{'has-error': ProductForm.price.$invalid}" >
+        <label for="title" class="col-sm-2 control-label">Price</label>
+        <div class="col-sm-2">
+            <input id="price" name="price" type="number" class="form-control" placeholder="Price" ng-model="product.price" required>
+        </div>
+    </div>
+    
+    <div class="form-group" ng-class="{'has-error': ProductForm.category.$invalid}" >
+        <label for="title" class="col-sm-2 control-label">Category</label>
+        <div class="col-sm-6">
+            <input id="category" name="category" type="text" class="form-control" placeholder="Category" ng-model="product.category" required>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+        	<button id="save" name="save" class="btn btn-primary"  ng-if="!product.id" ng-disabled="ProductForm.$invalid" ng-click="save()" >Save</button>
+        	<button id="update" name="update" class="btn btn-primary"  ng-if="product.id" ng-disabled="ProductForm.$invalid" ng-click="update()" >Save</button>
+			<button id="cancel" name="cancel" class="btn btn-default" ng-click="cancel()">Back</button>
+			<button id="delete" name="delete" class="btn btn-danger" ng-if="product.id" ng-click="remove()">Delete</button>
+        </div>
+    </div>
+</form>
