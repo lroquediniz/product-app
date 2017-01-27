@@ -1,4 +1,5 @@
-FROM java:8 
+FROM java:8
+MAINTAINER Luan Roque <lroquediniz@gmail.com>
 
 WORKDIR /app
 
