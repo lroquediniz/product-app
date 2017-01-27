@@ -1,6 +1,5 @@
-source/.settings
-source/.project
-source/.classpath
-source/target/
+.settings
+.project
+.classpath
+target/
 .DS_Store
-source/.DS_Store
