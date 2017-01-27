@@ -29,7 +29,7 @@ public class ProductService {
      * @param db {@link DB}
      */
     public ProductService(DB db) {
-        this.collection = db.getCollection("products");
+        this.collection = db.getCollection(ProductConstants.COLLECTION_NAME);
     }
 
     /**

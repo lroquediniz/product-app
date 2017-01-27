@@ -1,10 +1,6 @@
 package br.com.zup.productapp.run;
 
 
-import static spark.SparkBase.setIpAddress;
-import static spark.SparkBase.setPort;
-import static spark.SparkBase.staticFileLocation;
-
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -16,6 +12,7 @@ import com.mongodb.ServerAddress;
 import br.com.zup.productapp.resouce.ProductResource;
 import br.com.zup.productapp.service.ProductService;
 import br.com.zup.productapp.util.Constants;
+import spark.Spark;
 
 /**
  * 
@@ -24,9 +21,7 @@ import br.com.zup.productapp.util.Constants;
  * 
  *
  */
-public class Bootstrap {
-    private static final String IP_ADDRESS = "localhost";
-    private static final int PORT = 8080;
+public class Main {
 
     /**
      * Método de execução principal do sistema.
@@ -34,9 +29,7 @@ public class Bootstrap {
      * @throws Exception
      */
     public static void main(String[] args) throws Exception {
-        setIpAddress(IP_ADDRESS);
-        setPort(PORT);
-        staticFileLocation("/public");
+        Spark.staticFileLocation("/public");
         new ProductResource(new ProductService(mongo()));
     }
 
@@ -45,7 +38,7 @@ public class Bootstrap {
      * @return Bando de dados {@link DB} 
      * @throws Exception
      */
-    private static DB mongo() throws Exception {
+    private static synchronized DB mongo() throws Exception {
     	Logger mongoLogger = Logger.getLogger( "com.mongodb" );
     	mongoLogger.setLevel(Level.INFO);
     	System.setProperty("DB.TRACE", "true");

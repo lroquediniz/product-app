@@ -83,6 +83,8 @@ public class Product {
 		String FIELD_DESCRIPTION = "description";
 		String FIELD_PRICE = "price";
 		String FIELD_CATEGORY = "category";
+		String COLLECTION_NAME = "products";
+		
 
 	}
 
